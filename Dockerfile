@@ -1,4 +1,4 @@
-FROM rocker/tidyverse:3.3.1
+FROM rocker/tidyverse:latest
 MAINTAINER "ymattu"
 
 ## Add LaTeX, rticles and bookdown support
@@ -36,7 +36,7 @@ RUN apt-get update \
   ## And some nice R packages for publishing-related stuff 
   && . /etc/environment \ 
   && install2.r --error --repos $MRAN --deps TRUE \
-    bookdown rticles rmdshower
+    bookdown rticles rmdshower rstan
 
 ## Consider including: 
 # - libv8-dev (Javascript V8 packages)
