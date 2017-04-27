@@ -36,7 +36,9 @@ RUN apt-get update \
   ## And some nice R packages for publishing-related stuff 
   && . /etc/environment \ 
   && install2.r --error --repos $MRAN --deps TRUE \
-    bookdown rticles rmdshower rstan
+    bookdown rticles rmdshower
+
+RUN R -e "devtools::install_github('hadley/dtplyr')"
 
 ## Consider including: 
 # - libv8-dev (Javascript V8 packages)
